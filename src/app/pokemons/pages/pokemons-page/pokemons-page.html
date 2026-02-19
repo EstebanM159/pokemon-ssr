@@ -1,0 +1,13 @@
+<h1 class="text-3xl">Listado de pokemos</h1>
+<h2 class="text-xl">Pagina actual: {{ this.currentPage() }}</h2>
+
+<div class="flex justify-between">
+  <button (click)="loadPokemons(-1)" class="mt-2">Anteriores</button>
+  <button (click)="loadPokemons(+1)" class="mt-2">Siguientes</button>
+</div>
+<hr class="my-2" />
+@if (pokemons().length !== 0) {
+  <pokemon-list [pokemons]="pokemons()" />
+} @else {
+  <pokemons-list-skeleton />
+}
