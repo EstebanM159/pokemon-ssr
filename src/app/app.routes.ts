@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { RenderMode } from '@angular/ssr';
-
 export const routes: Routes = [
   {
     path: 'about',
@@ -18,7 +17,10 @@ export const routes: Routes = [
     path: 'pokemons',
     loadComponent: () => import('./pokemons/pages/pokemons-page/pokemons-page'),
   },
-
+  {
+    path: 'pokemon/:id',
+    loadComponent: () => import('./pokemons/pages/pokemon-page/pokemon-page.component'),
+  },
   {
     path: '**',
     redirectTo: 'about',
