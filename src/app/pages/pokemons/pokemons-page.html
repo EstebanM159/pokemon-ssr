@@ -1,0 +1,10 @@
+<h1>Listado de pokemons</h1>
+@if (!isLoading()) {
+  <pokemon-list />
+} @else {
+  <pokemon-list-skeleton />
+}
+<div class="flex justify-between">
+  <button class="mt-2">Anterior</button>
+  <button class="mt-2">Sigueinte</button>
+</div>
