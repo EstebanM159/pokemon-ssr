@@ -10,7 +10,7 @@
     </div>
   </section>
   <section class="flex flex-col items-center justify-center w-full">
-    <img [src]="pokemonGif" [alt]="pokemon()!.name" class="size-64" />
+    <img [src]="pokemonGif" [alt]="pokemon()?.name" class="size-64" />
     @if (pokemon()?.cries?.latest !== null) {
       <audio controls class="my-2">
         <source [src]="pokemon()?.cries?.latest" type="audio/wav" />
