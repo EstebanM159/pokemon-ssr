@@ -8,7 +8,13 @@ export const serverRoutes: ServerRoute[] = [
       return [{ page: '1' }, { page: '2' }];
     },
   },
-  { path: 'pokemon/:id', renderMode: RenderMode.Server },
+  {
+    path: 'pokemon/:id',
+    renderMode: RenderMode.Prerender,
+    async getPrerenderParams() {
+      return [{ id: '1' }, { id: '2' }, { id: '3' }];
+    },
+  },
   { path: 'about', renderMode: RenderMode.Prerender },
   { path: 'contact', renderMode: RenderMode.Prerender },
   { path: 'pricing', renderMode: RenderMode.Prerender },
