@@ -26,9 +26,9 @@ export default class PokemonPageComponent {
   public pokemon = toSignal(
     this.route.paramMap.pipe(
       switchMap((params) => {
-        const id = params.get('id');
-        if (!id) return [];
-        return this.pokemonService.loadPokemon(id);
+        const name = params.get('name');
+        if (!name) return [];
+        return this.pokemonService.loadPokemon(name);
       }),
     ),
   );
