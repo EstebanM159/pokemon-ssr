@@ -8,7 +8,7 @@ import { SimplePokemon } from '../../interfaces';
   templateUrl: './pokemon-card.html',
 })
 export class PokemonCard {
-  pokemon = input<SimplePokemon>();
+  pokemon = input.required<SimplePokemon>();
   public readonly pokemonUrlImage = computed(
     () =>
       `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${this.pokemon()?.id}.png`,
